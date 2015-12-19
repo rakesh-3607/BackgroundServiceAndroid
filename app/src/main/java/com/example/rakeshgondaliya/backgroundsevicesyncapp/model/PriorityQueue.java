@@ -1,6 +1,8 @@
 package com.example.rakeshgondaliya.backgroundsevicesyncapp.model;
 
 /**
+ * Implementation of the priority queue.
+ *
  * Created by rakeshgondaliya on 16/12/15.
  */
 public class PriorityQueue {
@@ -8,7 +10,10 @@ public class PriorityQueue {
     private CorePoint[] heap;
     private int heapSize, capacity;
 
-    /** Constructor **/
+    /**
+     *
+     * @param capacity
+     */
     public PriorityQueue(int capacity)
     {
         this.capacity = capacity + 1;
@@ -16,33 +21,52 @@ public class PriorityQueue {
         heapSize = 0;
     }
 
-    /** function to clear **/
+    /**
+     *
+     */
     public void clear()
     {
         heap = new CorePoint[capacity];
         heapSize = 0;
     }
-    /** function to check if empty **/
+
+    /**
+     *
+     * @return
+     */
     public boolean isEmpty()
     {
         return heapSize == 0;
     }
-    /** function to check if full **/
+
+    /**
+     *
+     * @return
+     */
     public boolean isFull()
     {
         return heapSize == capacity - 1;
     }
-    /** function to get Size **/
+
+    /**
+     *
+     * @return
+     */
     public int size()
     {
         return heapSize;
     }
 
 
-    /** function to insert task **/
+    /**
+     *
+     * @param pointName
+     * @param priority
+     * @return
+     */
     public CorePoint insert(String pointName, int priority)
     {
-        CorePoint newPoint = new com.example.rakeshgondaliya.backgroundsevicesyncapp.model.CorePoint(pointName, priority);
+        CorePoint newPoint = new CorePoint(pointName, priority);
 
         heap[++heapSize] = newPoint;
         int pos = heapSize;
@@ -55,6 +79,10 @@ public class PriorityQueue {
         return newPoint;
     }
 
+    /**
+     *
+     * @return
+     */
     public CorePoint remove()
     {
         int parent, child;

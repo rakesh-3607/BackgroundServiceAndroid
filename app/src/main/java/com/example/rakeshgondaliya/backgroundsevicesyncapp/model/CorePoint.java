@@ -1,6 +1,9 @@
 package com.example.rakeshgondaliya.backgroundsevicesyncapp.model;
 
 /**
+ * Model Class for Point.
+ * Future REST API model will be replciated here and passed to type safe REST client.
+ *
  * Created by rakeshgondaliya on 16/12/15.
  */
 public class CorePoint {
